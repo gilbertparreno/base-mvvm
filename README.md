@@ -4,6 +4,7 @@ A simple MVVM Architecture for Android.
 * Dependency Injection using [Dagger](https://github.com/google/dagger)
 * [Retrofit](https://square.github.io/retrofit/) x [RxJava & RxAndroid](https://github.com/ReactiveX/RxAndroid)
 * [Timber](https://github.com/JakeWharton/timber) for logs.
+* Clean Architecture
 
 ### Next
 * Unit Testing
