@@ -1,5 +1,6 @@
 package com.gp.base.di
 
+import com.gp.base.network.service.GithubService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -10,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class NetworkModule(val url : String, val debug: Boolean) {
+class NetworkModule(val url: String, val debug: Boolean) {
 
     @Provides
     @Singleton
@@ -36,5 +37,11 @@ class NetworkModule(val url : String, val debug: Boolean) {
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun providesProjectRepository(retrofit: Retrofit): GithubService {
+        return retrofit.create(GithubService::class.java)
     }
 }
