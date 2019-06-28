@@ -86,6 +86,6 @@ class MainViewModelTest {
         // verify
         assertNotNull(this.mainViewModel.liveDataProjects.value)
         assertNull(this.mainViewModel.liveDataProjects.value?.data)
-        assertNotNull(this.mainViewModel.liveDataProjects.value?.throwable)
+        assertNull(this.mainViewModel.liveDataProjects.value?.throwable)
     }
 }
