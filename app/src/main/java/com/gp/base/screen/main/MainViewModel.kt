@@ -1,10 +1,8 @@
 package com.gp.base.screen.main
 
 import androidx.lifecycle.*
-import com.gp.base.app.App
 import com.gp.base.network.model.ApiResponse
 import com.gp.base.network.model.Project
-import com.gp.base.network.repository.ProjectRepositoryImpl
 import com.gp.base.network.repository.ProjectRepositoryInteractor
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
@@ -22,13 +20,17 @@ class MainViewModel @Inject constructor(private val projectRepository: ProjectRe
         getProjectList()
     }
 
-    fun getProjectList() {
-        disposable.add(projectRepository.getProjectList("JakeWharton")
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    fun onDestroy() {
+        disposable.clear()
+    }
+
+    fun getProjectList(user : String = "JakeWharton") {
+        disposable.add(projectRepository.getProjectList(user)
             .subscribe(
                 { data ->
                     liveDataProjects.postValue(ApiResponse(data))
                 }, { throwable ->
-                    throwable.printStackTrace()
                     liveDataProjects.postValue(ApiResponse(throwable = throwable))
                 }
             ))

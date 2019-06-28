@@ -38,10 +38,4 @@ class NetworkModule(val url: String, val debug: Boolean) {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
-
-    @Provides
-    @Singleton
-    fun providesProjectRepository(retrofit: Retrofit): GithubService {
-        return retrofit.create(GithubService::class.java)
-    }
 }
