@@ -21,7 +21,13 @@ class App : Application() {
         }
 
         appComponent = DaggerAppComponent.builder()
-            .networkModule(NetworkModule("https://api.github.com", BuildConfig.DEBUG))
+            .networkModule(
+                NetworkModule(
+                    context = applicationContext,
+                    url = BuildConfig.API_URL,
+                    debug = BuildConfig.DEBUG
+                )
+            )
             .appModule(AppModule(this))
             .build()
     }

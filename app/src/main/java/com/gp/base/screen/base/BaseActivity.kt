@@ -1,12 +1,9 @@
 package com.gp.base.screen.base
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProviders
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.os.Bundle
-import java.lang.reflect.ParameterizedType
+import androidx.biometric.BiometricPrompt
+import com.gp.base.R
+import com.gp.base.utils.mainExecutor
 
 
 abstract class BaseActivity : AppCompatActivity()
