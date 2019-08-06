@@ -9,6 +9,10 @@ buildscript {
     ext.rx_android = '2.1.1'
     ext.rx_java = '2.2.9'
     ext.retrofit_adapter_version = '2.5.0'
+    ext.okhttp_version = '4.0.1'
+    ext.okhttp_loggin_interceptor_version = '3.14.2'
+    ext.timber_version = '4.7.1'
+
     repositories {
         google()
         jcenter()
