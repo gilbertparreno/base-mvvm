@@ -40,14 +40,14 @@ class MainActivity : BaseActivity() {
 
         viewModel.getProjectList()
 
-        showFingerprintPrompt(object : FingerprintAuthListener {
-            override fun onSuccess() {
-                applicationContext.showToast("Fingerprint authentication success!")
-            }
-
-            override fun onError(throwable: Throwable) {
-                applicationContext.showToast(throwable.message.toString())
-            }
-        })
+//        showFingerprintPrompt(object : FingerprintAuthListener {
+//            override fun onSuccess() {
+//                applicationContext.showToast("Fingerprint authentication success!")
+//            }
+//
+//            override fun onError(throwable: Throwable) {
+//                applicationContext.showToast(throwable.message.toString())
+//            }
+//        })
     }
 }

@@ -12,6 +12,7 @@ buildscript {
     ext.okhttp_version = '4.0.1'
     ext.okhttp_loggin_interceptor_version = '3.14.2'
     ext.timber_version = '4.7.1'
+    ext.conductor_version = '3.2.1'
 
     repositories {
         google()
@@ -30,7 +31,9 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven {
+            url "https://jitpack.io"
+        }
     }
 }
 
